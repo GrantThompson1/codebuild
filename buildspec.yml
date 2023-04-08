@@ -1,0 +1,23 @@
+batch:
+  fast-fail: false
+  build-graph:
+    - identifier: build1
+      buildspec: build1:yml
+      debug-session: true
+      env:
+        variables:
+          BUILD_ID: build1
+      ignore-failure: false
+    - identifier: build2
+      buildspec: build2.yml
+      env:
+        variables:
+          BUILD_ID: build2
+      depends-on:
+        - build1
+phases:
+  build:
+    commands:
+      - echo Entered teh build phase ...
+      - echo Build started on `date`
+      - codebuild-breakpoint

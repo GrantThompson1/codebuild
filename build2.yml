@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  build:
+    commands:
+       - echo "hello from build2"
+       - echo "hola from $BUILD_ID"
+       - touch myFile3.txt
+       - echo "test"> myFile3.txt
+artifacts:
+  files:
+    - '**/*'
