@@ -20,4 +20,4 @@ phases:
     commands:
       - echo Entered teh build phase ...
       - echo Build started on `date`
-      - codebuild-breakpoint
+      - aws sqs send-message --queue-url https://sqs.us-east-1.amazonaws.com/997477333591/my-queue --message-body "Hello, world"
