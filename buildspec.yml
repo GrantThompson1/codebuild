@@ -2,7 +2,7 @@ batch:
   fast-fail: false
   build-graph:
     - identifier: build1
-      buildspec: build1:yml
+      buildspec: build1.yml
       debug-session: true
       env:
         variables:
