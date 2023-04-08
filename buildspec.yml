@@ -13,8 +13,6 @@ batch:
       env:
         variables:
           BUILD_ID: build2
-      depends-on:
-        - build1
 phases:
   build:
     commands:
