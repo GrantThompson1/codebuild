@@ -17,10 +17,10 @@ batch:
             - 1
             - 2
 phases:
- pre_build:
+  pre_build:
     commands:
-      - mkdir -p results
-      - mkdir -p coverage
+      - mkdir results
+      - mkdir coverage
       - touch results/results.xml
       - touch coverage/coverage.xml
   build:
