@@ -1,23 +1,22 @@
+version: 0.2
 batch:
   fast-fail: false
-  build-graph:
-    - identifier: build1
-      buildspec: build1.yml
-      debug-session: true
+  build-matrix:
+    static:
+      ignore-failure: true
       env:
-        variables:
-          BUILD_ID: build1
-      ignore-failure: false
-    - identifier: build2
-      buildspec: build2.yml
+        compute-type: BUILD_GENERAL1_MEDIUM
+    dynamic:
       env:
+        compute-type:
+          - BUILD_GENERAL1_MEDIUM
+        image:
+          - public.ecr.aws/lambda/nodejs:14.2023.05.29.17
         variables:
-          BUILD_ID: build2
-      depends-on:
-        - build1
+          WORKERS:
+            - 1
+            - 2
 phases:
-  build:
+ pre_build:
     commands:
-      - echo Entered teh build phase ...
-      - echo Build started on `date`
-      - codebuild-breakpoint
+      - ls
