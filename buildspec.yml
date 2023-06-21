@@ -19,4 +19,19 @@ batch:
 phases:
  pre_build:
     commands:
-      - ls
+      - mkdir -p results
+      - mkdir -p coverage
+      - touch results/results.xml
+      - touch coverage/coverage.xml
+  build:
+    commands:
+      - echo "test" 
+reports:
+  jest_reports:
+    files:
+      - results/**/*
+    file-format: JUNITXML
+  CoverageReports:
+    files:
+      - coverage/**/*
+    file-format: CLOVERXML
