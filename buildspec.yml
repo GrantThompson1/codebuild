@@ -26,12 +26,3 @@ phases:
   build:
     commands:
       - echo "test" 
-reports:
-  jest_reports:
-    files:
-      - results/**/*
-    file-format: JUNITXML
-  CoverageReports:
-    files:
-      - coverage/**/*
-    file-format: CLOVERXML
