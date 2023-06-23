@@ -20,4 +20,3 @@ phases:
     commands:
       - echo Entered teh build phase ...
       - echo Build started on `date`
-      - codebuild-breakpoint
